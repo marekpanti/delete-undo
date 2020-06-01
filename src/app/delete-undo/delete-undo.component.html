@@ -1,0 +1,18 @@
+<button
+  mat-icon-button
+  *ngIf="!showUndo"
+  (click)="onRemove()"
+  [disabled]="isDeleteDisabled"
+  type="button"
+>
+  delete
+</button>
+<button
+  mat-button
+  color="warn"
+  *ngIf="showUndo"
+  (click)="onUndo()"
+  type="button"
+>
+  Undo({{ countDownValue | async }})
+</button>
